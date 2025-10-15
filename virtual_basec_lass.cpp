@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int x = 300;
+};
+
+class B : virtual public A {
+};
+
+class C : virtual public A {
+};
+
+class D : public B, public C {
+};
+
+int main() {
+    D obj;
+    cout << obj.x << endl; // Unambiguous access, prints 100
+    return 0;
+}
